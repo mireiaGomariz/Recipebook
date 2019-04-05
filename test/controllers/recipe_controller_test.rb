@@ -6,9 +6,4 @@ class RecipeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get home" do
-    get recipe_home_url
-    assert_response :success
-  end
-
 end
