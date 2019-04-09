@@ -1,16 +1,20 @@
 class RecipesController < ApplicationController
+
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_autor, only: [:edit, :update, :destroy]
+
   def index
     @recipe=Recipe.all
   end
 
   def new
     @button = "Crear"
-    @recipe = Recipe.new
+    @recipe = current_user.recipes.build
 
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.build(recipe_params)
     if @recipe.save
       redirect_to @recipe
     else
@@ -53,5 +57,10 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:title, :ingredients, :elaboration, :user_id)
 
+  end
+
+  def correct_user
+    @recipe = current_user.recipe.find_by(id: params[:id])
+    redirect_to recipe_path, notice: "No esta autorizado a editar este articulo" if @recipe.nil?
   end
 end
