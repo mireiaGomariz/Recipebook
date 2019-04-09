@@ -1,0 +1,8 @@
+<h1><%= @recipe.title %></h1>
+<h2><%= @recipe.user_id %></h2>
+
+<p><%= @recipe.ingredients %></p>
+<p><%= @recipe.elaboration %></p>
+
+<%= link_to "Editar", edit_recipe_path(@recipe) %>
+<%= link_to "Eliminar", @recipe,  method: :delete, data: {confirm: "¿Seguro que quieres eliminar la receta?"} %>
