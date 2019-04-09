@@ -1,8 +1,8 @@
 <h1>Índice Recetas</h1>
 
 <%= @recipe.each do |rec| %>
-<p><%= rec.title %></p>
-<p><%= rec.ingredients %></p>
-<p><%= rec.elaboration %></p>
+  <h2><%= link_to rec.title, rec %></h2>
+  <p><%= rec.ingredients %></p>
+  <p><%= rec.elaboration %></p>
 
 <% end %>

@@ -1,10 +1,11 @@
 class RecipesController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :correct_autor, only: [:edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @recipe=Recipe.all
+    @recipe=Recipe.all.order("created_at DESC").paginate(page: params[:page], :per_page=>2)
+
   end
 
   def new
@@ -60,7 +61,7 @@ class RecipesController < ApplicationController
   end
 
   def correct_user
-    @recipe = current_user.recipe.find_by(id: params[:id])
+    @recipe = current_user.recipes.find_by(id: params[:id])
     redirect_to recipe_path, notice: "No esta autorizado a editar este articulo" if @recipe.nil?
   end
 end
