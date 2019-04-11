@@ -1,3 +1,16 @@
 
 
 @import "bootstrap";
+
+.fm-nav a {
+  color: #fff;
+  padding: 15px;
+}
+
+.fm-nav .disabled {
+  color: rgba(255, 255, 255, .1);
+}
+
+.fm-nav a:hover {
+  background: rgba(255, 255, 255,.1);
+}

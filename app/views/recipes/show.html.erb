@@ -1,19 +1,15 @@
 
 
 <div class="jumbotron">
-  <div class="row">
-    <div class="col-12">
+  <div class="container">
       <h1 class="display-2 mb-3"><%= @recipe.title %></h1>
-    </div>
-    <div class="col-12">
-      <p><%= @recipe.user_id %></p>
-    </div>
+      <p class="lead mb-4"><%= @recipe.user_id %></p>
 
   </div>
 </div>
 
   <div class="container">
-    <div class="row">
+    <div class="row d-flex">
       <div class="col">
         <div class="card">
             <div class="card-body">
@@ -29,7 +25,6 @@
 
                 <div class="row justify-content-end mt-5">
                   <% if user_signed_in? %>
-
                     <%= link_to "Editar", edit_recipe_path(@recipe), class: 'btn btn-primary' %>
                     <%= link_to "Eliminar", @recipe,  method: :delete, data: {confirm: "¿Seguro que quieres eliminar la receta?"}, class: 'btn btn-success ml-3' %>
                   <% end %>
