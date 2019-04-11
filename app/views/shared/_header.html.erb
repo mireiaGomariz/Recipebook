@@ -1,6 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-
-  <%= link_to 'Home', root_path %>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <%= link_to 'Home', root_path, class: 'color-home' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,10 +7,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="nav navbar-nav fm-nav navbar-right">
       <% if !user_signed_in? %>
-        <li class="ml-3"><%= link_to 'Iniciar Sesión', new_user_session_path %></li>
+        <%= link_to 'Iniciar Sesión', new_user_session_path %>
       <% else %>
-        <li class="ml-3"><%= link_to 'Nueva Receta', new_recipe_path %></li>
-        <li class="ml-3"><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %></li>
+        <%= link_to 'Nueva Receta', new_recipe_path %>
+        <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %>
         <% end %>
     </ul>
   </div>
