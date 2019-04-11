@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @recipe=Recipe.all.order("created_at DESC").paginate(page: params[:page], :per_page=>2)
+    @recipe=current_user.recipes.order("created_at DESC").paginate(page: params[:page], :per_page=>2)
 
   end
 
