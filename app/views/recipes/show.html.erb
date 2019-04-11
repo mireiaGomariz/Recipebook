@@ -1,18 +1,45 @@
 
 
 <div class="jumbotron">
-  <div class="container">
-    <h1><%= @recipe.title %></h1>
-  </div>  
+  <div class="row">
+    <div class="col-12">
+      <h1 class="display-2 mb-3"><%= @recipe.title %></h1>
+    </div>
+    <div class="col-12">
+      <p><%= @recipe.user_id %></p>
+    </div>
+
+  </div>
 </div>
 
-<h1><%= @recipe.title %></h1>
-<h2><%= @recipe.user_id %></h2>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+            <div class="card-body">
+              <h3 class="card-title display-4 mb-4"><%= @recipe.title %></h3>
+                <div class="row mb-3 ml-2">
+                  <h3 class="card-subtitle display-6 mb-4">Ingredients</h3>
+                  <p class="card-text mb-4"><%= @recipe.ingredients %></p>
+                </div>
+                <div class="row mb-3 ml-2">
+                  <h3 class="card-subtitle display-6 mb-4">Elaboration</h3>
+                  <p class="card-text mb-4"><%= @recipe.elaboration %></p>
+                </div>
 
-<p><%= @recipe.ingredients %></p>
-<p><%= @recipe.elaboration %></p>
+                <div class="row justify-content-end mt-5">
+                  <% if user_signed_in? %>
 
-<% if user_signed_in? %>
-  <%= link_to "Editar", edit_recipe_path(@recipe) %>
-  <%= link_to "Eliminar", @recipe,  method: :delete, data: {confirm: "¿Seguro que quieres eliminar la receta?"} %>
-<% end %>
+                    <%= link_to "Editar", edit_recipe_path(@recipe), class: 'btn btn-primary' %>
+                    <%= link_to "Eliminar", @recipe,  method: :delete, data: {confirm: "¿Seguro que quieres eliminar la receta?"}, class: 'btn btn-success ml-3' %>
+                  <% end %>
+
+                </div>
+            </div>
+          </div>">
+
+        </div>
+
+    </div>
+
+  </div>
