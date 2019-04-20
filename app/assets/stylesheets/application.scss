@@ -15,9 +15,12 @@ nav {
   background: rgba(255, 255, 255,.2);
 }
 
-.color-home {
+.homeButton {
   color: #310230;
+  padding: 8px;
 }
+
+
 
 .MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
     .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
