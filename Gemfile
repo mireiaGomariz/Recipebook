@@ -39,6 +39,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'bootstrap', '~> 4.2.1'
 gem 'devise'
 gem 'popper', '~> 0.2.5'
+gem "paperclip"
 #
 gem 'pry-rails'
 
