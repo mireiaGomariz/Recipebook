@@ -25,6 +25,11 @@
               <%= f.text_field :user_id, class: 'form-control' %><br>
             </div>
 
+            <div class="field">
+              <%= f.file_field :image %>
+            </div>
+
+
             <%= f.submit "#{@boton} Crear", class: 'btn btn-primary' %>
           <% end %>
           </div>
