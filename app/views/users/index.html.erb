@@ -1,8 +1,11 @@
 <div class="container">
   <div class="row mt-5">
-    <div class="col mt-5">
+    <div class="col-12 mt-5">
       <%= @user.name %>
 
+      <%= @user.id %>
+
+      <%= image_tag(@user.image, :alt => "rss feed") %>
     </div>
 
   </div>
