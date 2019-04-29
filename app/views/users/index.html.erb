@@ -2,10 +2,15 @@
   <div class="row mt-5">
     <div class="col-12 mt-5">
       <%= @user.name %>
-
-      <%= @user.id %>
-      <%= image_tag @user.avatar.url, class: "thumbnail" %>
     </div>
+    <div class="col-12 mt-5">
+      <%= @user.id %>
+    </div>
+    <div class="col-12 mt-5">
+      <%= image_tag @user.avatar.url, class: "thumbnail avatarImage"  %>
+    </div>
+
+
 
   </div>
 
