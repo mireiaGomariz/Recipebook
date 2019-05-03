@@ -1,7 +1,9 @@
 
 
 <div class="jumbotron">
-  <%= image_tag @recipe.image&.url %>
+  <%= image_tag @recipe.image&.url, class: 'recipeImage' %>
+
+
   <div class="container">
       <h1 class="display-2 mb-3"><%= @recipe.title %></h1>
       <p class="lead mb-4"><%= @recipe.user_id %></p>
