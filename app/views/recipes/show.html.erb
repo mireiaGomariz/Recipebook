@@ -1,7 +1,6 @@
 
 
-<div class="jumbotron">
-  <%= image_tag @recipe.image&.url, class: 'recipeImage' %>
+<div class="jumbotron recipeImage" style="background-image: url(<%= @recipe.image&.url(:medium) %>);">
 
 
   <div class="container">
