@@ -6,6 +6,7 @@
             <% @recipe.each do |rec| %>
                 <div class="item ">
                   <div class="pad15">
+										
                       <h4 class="lead"><%= link_to rec.title, rec%></h4>
                       <p><%= rec.ingredients.truncate_words(15) %></p>
                       <p><%= rec.elaboration.truncate_words(15) %></p>
